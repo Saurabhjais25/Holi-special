@@ -78,6 +78,49 @@ const lines = [
     "haa jeans pahan kr jo tune mara thukma",
     "toh lattoo padosan ki bhabhi ho gayi",
 ]
+
+let lineIndex = 0;
+let charIndex = 0;
+const speed = 80; // typing speed in milliseconds
+const lyricsElement = document.getElementById("lyrics");
+
+function typeWriter() {
+    if (charIndex < lines[lineIndex].length) {
+        lyricsElement.textContent += lines[lineIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, speed);
+    } else {
+        setTimeout(() => {
+            lyricsElement.textContent = "";
+            charIndex = 0;
+            lineIndex = (lineIndex + 1) % lines.length;
+            typeWriter();
+        }, 1500);
+    }
+}
+
+typeWriter();
+
+// Create floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 500);
+</script>
+    
+</body>
+</html>
 </script>
 </body>
 </html>
