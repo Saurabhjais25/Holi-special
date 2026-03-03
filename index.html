@@ -24,6 +24,42 @@
    50%{background-position: 100% 50%;}
    100%{background-position: 0% 50%;}
  }  
+.card {
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    color:rgb(253, 253, 253);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px white;
+}
+
+#lyrics {
+    font-size: 22px;
+    min-height: 30px;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0%{transform: translateY(100vh);}
+    100%{transform: translateY(-10vh);}
+}
 </style>
 </head>
 <body>
